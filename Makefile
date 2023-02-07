@@ -1,7 +1,3 @@
-# Project utilities
-env_create:
-	conda create -n apache_kafka_sandbox python=3.10 -y
-
 env_configure: env_install_dependencies env_install_jupyter_extensions env_install_precommit_hooks
 	echo "Environment is configured"
 
@@ -25,26 +21,8 @@ env_install_jupyter_extensions:
 	&& jupyter nbextension enable hinterland/hinterland \
 	&& jt -t grade3
 
-env_delete:
-	conda remove --name apache_kafka_sandbox --all -y
-
-run_jupyter:
-	jupyter-notebook --ip 0.0.0.0 --no-browser
-
 run_precommit:
 	pre-commit run --all-files
 
-kafka_run:
-	docker-compose -f docker-compose.yaml up -d
-
-kafka_stop:
-	docker-compose -f docker-compose.yaml down
-
-run_producer:
-	python3 'src/producer.py'
-
-run_classical_consumer:
-	python3 'src/consumer.py'
-
-run_batch_consumer:
-	python3 'src/consumer_batch.py'
+run_strawberry_server:
+	strawberry server src.strawberry_server.main
