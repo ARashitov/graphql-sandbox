@@ -1,17 +1,14 @@
-# Apache Kafka sandbox
+# GraphQL sandbox
 
-Project for investigation & personal experiments with Apache Kafka on Python
+Project for investigation & personal experiments with GraphQL on Python (strawberry)
 
 ## 📦 Prerequisites
 
-- Linux
-- Docker & Docker-compose
-- build-essentials package to run makefiles
+installed poetry 
 
 ## 💼 Management options
 
-- to spin up docker container with kafka: `make kafka_run`
-- to stop docker container with kafka: `make kafka_stop`
+- to spin up docker container with kafka: `make run_strawberry_server`
 
 ## 🐍 Python dependencies
 
